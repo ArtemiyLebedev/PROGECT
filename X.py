@@ -139,17 +139,17 @@ horseCheck01.place(x=150, y=448)
 
 horse02Game = BooleanVar()
 horse02Game.set(0)
-horseCheck02 = Checkbutton(text=nameHorse02, variable=horse01Game, onvalue=1, offvalue=0)
+horseCheck02 = Checkbutton(text=nameHorse02, variable=horse02Game, onvalue=1, offvalue=0)
 horseCheck02.place(x=150, y=478)
 
 horse03Game = BooleanVar()
 horse03Game.set(0)
-horseCheck03 = Checkbutton(text=nameHorse03, variable=horse01Game, onvalue=1, offvalue=0)
+horseCheck03 = Checkbutton(text=nameHorse03, variable=horse03Game, onvalue=1, offvalue=0)
 horseCheck03.place(x=150, y=508)
 
 horse04Game = BooleanVar()
 horse04Game.set(0)
-horseCheck04 = Checkbutton(text=nameHorse04, variable=horse01Game, onvalue=1, offvalue=0)
+horseCheck04 = Checkbutton(text=nameHorse04, variable=horse04Game, onvalue=1, offvalue=0)
 horseCheck04.place(x=150, y=538)
 
 root.mainloop()
