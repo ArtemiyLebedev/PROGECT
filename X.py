@@ -118,6 +118,7 @@ if money <= 0:
 LabelAllMoney = Label(text=f"Осталось средств: {money} {valuta}.", font="Arial 12")
 LabelAllMoney.place(x=20, y=565)
 
+#Вывод текста со ставками на лошадь
 LabelHorse01 = Label(text="Ставка на лошадь №1")
 LabelHorse01.place(x=20, y=480)
 
@@ -129,4 +130,26 @@ LabelHorse03.place(x=20, y=450)
 
 LabelHorse01 = Label(text="Ставка на лошадь №4")
 LabelHorse01.place(x=20, y=540)
+
+#Вывод чекбоксов
+horse01Game = BooleanVar()
+horse01Game.set(0)
+horseCheck01 = Checkbutton(text=nameHorse01, variable=horse01Game, onvalue=1, offvalue=0)
+horseCheck01.place(x=150, y=448)
+
+horse02Game = BooleanVar()
+horse02Game.set(0)
+horseCheck02 = Checkbutton(text=nameHorse02, variable=horse01Game, onvalue=1, offvalue=0)
+horseCheck02.place(x=150, y=478)
+
+horse03Game = BooleanVar()
+horse03Game.set(0)
+horseCheck03 = Checkbutton(text=nameHorse03, variable=horse01Game, onvalue=1, offvalue=0)
+horseCheck03.place(x=150, y=508)
+
+horse04Game = BooleanVar()
+horse04Game.set(0)
+horseCheck04 = Checkbutton(text=nameHorse04, variable=horse01Game, onvalue=1, offvalue=0)
+horseCheck04.place(x=150, y=538)
+
 root.mainloop()
