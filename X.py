@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
+from tkinter import ttk
 
-root = Tk()
 # ***********************************************************************************************************************
 # МЕТОДЫ И ФУНКЦИИ
 # ***********************************************************************************************************************
@@ -39,6 +39,8 @@ def saveMoney(moneyToSave):
     except:
         print("Ошибка создания файла наше КАЗИНО закрывается!")
         quit(0)
+
+root = Tk()
 # ***********************************************************************************************************************
 # ЗНАЧЕНИЯ ПЕРЕМЕННЫХ
 # ***********************************************************************************************************************
@@ -114,6 +116,7 @@ money = loadMoney()
 
 if money <= 0:
     messagebox.showinfo("Стоп!","На ИППОДРОМ без средств заходить нельзя!")
+    quit = (0)
 
 LabelAllMoney = Label(text=f"Осталось средств: {money} {valuta}.", font="Arial 12")
 LabelAllMoney.place(x=20, y=565)
@@ -151,5 +154,24 @@ horse04Game = BooleanVar()
 horse04Game.set(0)
 horseCheck04 = Checkbutton(text=nameHorse04, variable=horse04Game, onvalue=1, offvalue=0)
 horseCheck04.place(x=150, y=538)
+
+#Выпадающий список (drop-dawn list)
+stavka01 = ttk.Combobox(root)
+stavka02 = ttk.Combobox(root)
+stavka03 = ttk.Combobox(root)
+stavka04 = ttk.Combobox(root)
+
+# Делаем атрибут "только чтение" (Make an attribute "read-only")
+stavka01["state"] = "readonly"
+stavka01.place(x=280, y=450)
+
+stavka02["state"] = "readonly"
+stavka02.place(x=280, y=480)
+
+stavka03["state"] = "readonly"
+stavka03.place(x=280, y=510)
+
+stavka04["state"] = "readonly"
+stavka04.place(x=280, y=540)
 
 root.mainloop()
