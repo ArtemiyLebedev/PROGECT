@@ -39,6 +39,16 @@ def saveMoney(moneyToSave):
     except:
         print("Ошибка создания файла наше КАЗИНО закрывается!")
         quit(0)
+def getValues(summa):
+    value = []
+    if summa > 9:
+        for i in range(0, 11):
+            value.append(i*(int(summa) // 10))
+        else:
+            value.append(0)
+            if summa > 0:
+                value.append(summa)
+        return value
 
 root = Tk()
 # ***********************************************************************************************************************
@@ -62,6 +72,12 @@ nameHorse01 = "Ананас"
 nameHorse02 = "Сталкер"
 nameHorse03 = "Обжора"
 nameHorse04 = "Осел"
+
+summ01 = intVar()
+summ02 = intVar()
+summ03 = intVar()
+summ04 = intVar()
+
 # ***********************************************************************************************************************
 # ФОРМИРОВАНИЕ ЭЛЕМЕНТОВ В ОКНЕ
 # ***********************************************************************************************************************
@@ -174,4 +190,10 @@ stavka03.place(x=280, y=510)
 stavka04["state"] = "readonly"
 stavka04.place(x=280, y=540)
 
+stavka01.bind("<<ComboboxSelected>>", refreshCombo)
+stavka02.bind("<<ComboboxSelected>>", refreshCombo)
+stavka03.bind("<<ComboboxSelected>>", refreshCombo)
+stavka04.bind("<<ComboboxSelected>>", refreshCombo)
+
+refreshCombo("")
 root.mainloop()
